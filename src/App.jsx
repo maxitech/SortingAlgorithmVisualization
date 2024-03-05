@@ -6,6 +6,8 @@ import BarsContainer from './Components/BarsContainer';
 function App() {
   const [arrayLength, setArrayLength] = useState(10);
   const [array, setArray] = useState([]);
+  const [sorted, setSorted] = useState(false);
+  const [sortedArr, setSortedArr] = useState([]);
 
   function generateArray(length) {
     const newArray = [];
@@ -26,10 +28,10 @@ function App() {
   }
 
   function handleBubbleSortClick() {
-    // console.log(array);
+    setSorted(true);
     const sorted = bubbleSort(array);
-    // console.log(sorted);
-    setArray(sorted);
+    setSortedArr(sorted);
+    setSorted(!sorted);
   }
 
   return (
@@ -40,7 +42,7 @@ function App() {
         <input type="range" min="10" max="300" value={arrayLength} onChange={handleSliderChange} />
       </div>
 
-      <BarsContainer array={array} />
+      <BarsContainer array={sorted ? sortedArr : array} />
 
       <div>
         <button onClick={handleBubbleSortClick}>Bubble Sort</button>
