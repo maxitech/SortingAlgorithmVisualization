@@ -1,4 +1,13 @@
+.bars_container {
+  height: 50vh;
+  width: 70vw;
+
+  display: flex;
+  align-items: flex-end;
+}
+
 .bar {
-  height: 50px;
   width: 10px;
+  background-color: #000;
+  margin-right: 0.125em;
 }

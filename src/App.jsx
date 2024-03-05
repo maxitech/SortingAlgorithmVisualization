@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import bubbleSort from './Algorithms/BubbleSort';
-// import BarsContainer from './Components/BarsContainer';
+import BarsContainer from './Components/BarsContainer';
 
 function App() {
   const [arrayLength, setArrayLength] = useState(10);
@@ -26,9 +26,9 @@ function App() {
   }
 
   function handleBubbleSortClick() {
-    console.log(array);
+    // console.log(array);
     const sorted = bubbleSort(array);
-    console.log(sorted);
+    // console.log(sorted);
     setArray(sorted);
   }
 
@@ -37,10 +37,10 @@ function App() {
       <h1>Sorting Algorithm Visualization</h1>
       <div>
         <h2>Slider</h2>
-        <input type="range" min="10" max="500" value={arrayLength} onChange={handleSliderChange} />
+        <input type="range" min="10" max="300" value={arrayLength} onChange={handleSliderChange} />
       </div>
 
-      {/* <BarsContainer arrayLength={arrayLength} /> */}
+      <BarsContainer array={array} />
 
       <div>
         <button onClick={handleBubbleSortClick}>Bubble Sort</button>

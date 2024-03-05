@@ -1,16 +1,19 @@
-// import React from 'react';
+import React, { useEffect } from 'react';
 
-// function BarsContainer({ arrayLength }) {
-//   let barEl;
-//   for (let i = 0; i < arrayLength; i++) {
-//     barEl = <div className="bar"></div>;
-//   }
+function BarsContainer({ array }) {
+  const barHeight = array.map((bar) => bar * 100);
 
-//   // const barEl = array.map((bar) => {
-//   //   <div className="bar"></div>;
-//   // });
+  useEffect(() => {
+    console.log(barHeight);
+  }, [array]);
 
-//   return { barEl };
-// }
+  const barEl = array.map((bar, i) => {
+    return <div key={i} className="bar" style={{ height: `${barHeight[i]}%` }}></div>;
+  });
 
-// export default BarsContainer;
+  console.log(barEl);
+
+  return <div className="bars_container">{barEl}</div>;
+}
+
+export default BarsContainer;
