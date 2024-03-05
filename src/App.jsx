@@ -43,7 +43,7 @@ function App() {
     setArray([]);
     setSorted(false);
     setSortedArr([]);
-    generateArray(arrayLength);
+    generateArray(10);
   }
 
   return (
