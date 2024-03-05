@@ -31,7 +31,19 @@ function App() {
     setSorted(true);
     const sorted = bubbleSort(array);
     setSortedArr(sorted);
-    setSorted(!sorted);
+    setSorted(false);
+  }
+
+  function handleResetClick() {
+    reset();
+  }
+
+  function reset() {
+    setArrayLength(10);
+    setArray([]);
+    setSorted(false);
+    setSortedArr([]);
+    generateArray(arrayLength);
   }
 
   return (
@@ -46,6 +58,7 @@ function App() {
 
       <div>
         <button onClick={handleBubbleSortClick}>Bubble Sort</button>
+        <button onClick={handleResetClick}>Reset</button>
       </div>
     </>
   );
