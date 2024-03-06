@@ -9,6 +9,8 @@ function App() {
   const [array, setArray] = useState([]);
   const [sorted, setSorted] = useState(false);
   const [sortedArr, setSortedArr] = useState([]);
+  const [moves, setMoves] = useState([]);
+  const [buttonClicked, setButtonClicked] = useState(false);
 
   function generateArray(length) {
     const newArray = [];
@@ -29,13 +31,20 @@ function App() {
   }
 
   function handleBubbleSortClick() {
+    setButtonClicked(true);
     setSorted(true);
+    const copy = [...array];
+    const { sortedArray, moves } = bubbleSort(copy);
+    setMoves(moves);
+    setSortedArr([...sortedArray]);
 
-    const { sortedArray, moves } = bubbleSort(array);
-    animateBubbleSort(moves);
-    setSortedArr(sortedArray);
+    setTimeout(() => {
+      animateBubbleSort(array, moves, setSortedArr);
+    }, 0);
 
-    setSorted(false);
+    setTimeout(() => {
+      setSortedArr(sortedArray);
+    }, moves.length * 50);
   }
 
   function handleResetClick() {
@@ -47,6 +56,7 @@ function App() {
     setArray([]);
     setSorted(false);
     setSortedArr([]);
+    setButtonClicked(false);
     generateArray(10);
   }
 
@@ -55,13 +65,22 @@ function App() {
       <h1>Sorting Algorithm Visualization</h1>
       <div>
         <h2>Slider</h2>
-        <input type="range" min="10" max="300" value={arrayLength} onChange={handleSliderChange} />
+        <input
+          type="range"
+          min="10"
+          max="300"
+          value={arrayLength}
+          onChange={handleSliderChange}
+          disabled={buttonClicked}
+        />
       </div>
 
-      <BarsContainer array={sorted ? sortedArr : array} />
+      <BarsContainer array={array} />
 
       <div>
-        <button onClick={handleBubbleSortClick}>Bubble Sort</button>
+        <button onClick={handleBubbleSortClick} disabled={buttonClicked}>
+          Bubble Sort
+        </button>
         <button onClick={handleResetClick}>Reset</button>
       </div>
     </>
