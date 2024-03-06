@@ -8,7 +8,7 @@ function animateBubbleSort(array, moves, setSortedArray) {
 
   setTimeout(() => {
     animateBubbleSort(array, moves, setSortedArray);
-  }, 50);
+  }, 0);
 }
 
 export default animateBubbleSort;

@@ -58,12 +58,12 @@ function App() {
   return (
     <>
       <h1>Sorting Algorithm Visualization</h1>
-      <div>
-        <h2>Slider</h2>
+      <div className="slider_container">
+        <h2>Change Array Size:</h2>
         <input
           type="range"
           min="10"
-          max="300"
+          max="200"
           value={arrayLength}
           onChange={handleSliderChange}
           disabled={buttonClicked}
@@ -72,11 +72,13 @@ function App() {
 
       <BarsContainer array={array} />
 
-      <div>
-        <button onClick={handleBubbleSortClick} disabled={buttonClicked}>
+      <div className="btn_container">
+        <button onClick={handleBubbleSortClick} disabled={buttonClicked} className="btn">
           Bubble Sort
         </button>
-        <button onClick={handleResetClick}>Reset</button>
+        <button onClick={handleResetClick} className="btn">
+          Reset
+        </button>
       </div>
     </>
   );
