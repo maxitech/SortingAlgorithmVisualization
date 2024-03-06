@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import bubbleSort from './Algorithms/BubbleSort';
+import bubbleSort from './Algorithms/bubbleSort';
+import animateBubbleSort from './Animations/animateBubbleSort';
 import BarsContainer from './Components/BarsContainer';
 
 function App() {
@@ -29,8 +30,11 @@ function App() {
 
   function handleBubbleSortClick() {
     setSorted(true);
-    const sorted = bubbleSort(array);
-    setSortedArr(sorted);
+
+    const { sortedArray, moves } = bubbleSort(array);
+    animateBubbleSort(moves);
+    setSortedArr(sortedArray);
+
     setSorted(false);
   }
 
