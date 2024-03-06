@@ -7,9 +7,7 @@ import BarsContainer from './Components/BarsContainer';
 function App() {
   const [arrayLength, setArrayLength] = useState(10);
   const [array, setArray] = useState([]);
-  const [sorted, setSorted] = useState(false);
   const [sortedArr, setSortedArr] = useState([]);
-  const [moves, setMoves] = useState([]);
   const [buttonClicked, setButtonClicked] = useState(false);
 
   function generateArray(length) {
@@ -32,10 +30,8 @@ function App() {
 
   function handleBubbleSortClick() {
     setButtonClicked(true);
-    setSorted(true);
     const copy = [...array];
     const { sortedArray, moves } = bubbleSort(copy);
-    setMoves(moves);
     setSortedArr([...sortedArray]);
 
     setTimeout(() => {
@@ -54,7 +50,6 @@ function App() {
   function reset() {
     setArrayLength(10);
     setArray([]);
-    setSorted(false);
     setSortedArr([]);
     setButtonClicked(false);
     generateArray(10);
