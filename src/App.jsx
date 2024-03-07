@@ -61,7 +61,7 @@ function App() {
     <>
       <h1>Sorting Algorithm Visualization</h1>
       <div className="slider_container">
-        <h2>Change Array Size:</h2>
+        <h2>Change Array Size & Speed:</h2>
         <input
           type="range"
           min="10"
