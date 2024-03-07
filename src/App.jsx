@@ -60,16 +60,29 @@ function App() {
   return (
     <>
       <h1>Sorting Algorithm Visualization</h1>
-      <div className="slider_container">
-        <h2>Change Array Size & Speed:</h2>
-        <input
-          type="range"
-          min="10"
-          max="100"
-          value={arrayLength}
-          onChange={handleSliderChange}
-          disabled={buttonClicked}
-        />
+      <div className="use_info_container">
+        <div className="slider_container">
+          <h2>Change Array Size & Speed:</h2>
+          <input
+            type="range"
+            min="10"
+            max="100"
+            value={arrayLength}
+            onChange={handleSliderChange}
+            disabled={buttonClicked}
+          />
+        </div>
+        <div className="info_container">
+          <div className="info">
+            <div className="info_color red"></div>
+            <p>swap</p>
+          </div>
+
+          <div className="info">
+            <div className="info_color yellow"></div>
+            <p>compare</p>
+          </div>
+        </div>
       </div>
 
       <BarsContainer array={array} move={move} />
