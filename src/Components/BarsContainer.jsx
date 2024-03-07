@@ -1,7 +1,18 @@
-function BarsContainer({ array }) {
+function BarsContainer({ array, move }) {
+  console.log(move);
   const barHeight = array.map((bar) => bar * 100);
   const barEl = array.map((bar, i) => {
-    return <div key={i} className="bar" style={{ height: `${barHeight[i]}%` }}></div>;
+    let barColor = '#525ceb';
+    if (move && move.indicies?.includes(i)) {
+      barColor = move.type === 'swap' ? '#DA1212' : '#F0DE36';
+    }
+    return (
+      <div
+        key={i}
+        className="bar"
+        style={{ height: `${barHeight[i]}%`, backgroundColor: `${barColor}` }}
+      ></div>
+    );
   });
 
   return <div className="bars_container">{barEl}</div>;

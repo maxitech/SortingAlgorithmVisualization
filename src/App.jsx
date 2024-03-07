@@ -9,6 +9,7 @@ function App() {
   const [array, setArray] = useState([]);
   const [sortedArr, setSortedArr] = useState([]);
   const [buttonClicked, setButtonClicked] = useState(false);
+  const [move, setMove] = useState({});
 
   function generateArray(length) {
     const newArray = [];
@@ -34,8 +35,10 @@ function App() {
     const { sortedArray, moves } = bubbleSort(copy);
     setSortedArr([...sortedArray]);
 
+    // console.log(moves);
+
     setTimeout(() => {
-      animateBubbleSort(array, moves, setSortedArr);
+      animateBubbleSort(array, moves, setSortedArr, setMove);
     }, 0);
 
     setTimeout(() => {
@@ -53,6 +56,7 @@ function App() {
     setSortedArr([]);
     setButtonClicked(false);
     generateArray(10);
+    setMove({});
   }
 
   return (
@@ -70,7 +74,7 @@ function App() {
         />
       </div>
 
-      <BarsContainer array={array} />
+      <BarsContainer array={array} move={move} />
 
       <div className="btn_container">
         <button onClick={handleBubbleSortClick} disabled={buttonClicked} className="btn">
