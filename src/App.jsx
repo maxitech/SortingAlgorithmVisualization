@@ -10,6 +10,7 @@ function App() {
   const [sortedArr, setSortedArr] = useState([]);
   const [buttonClicked, setButtonClicked] = useState(false);
   const [move, setMove] = useState({});
+  const [timeoutId, setTimeoutId] = useState(null);
 
   function generateArray(length) {
     const newArray = [];
@@ -35,9 +36,7 @@ function App() {
     const { sortedArray, moves } = bubbleSort(copy);
     setSortedArr([...sortedArray]);
 
-    setTimeout(() => {
-      animateBubbleSort(array, moves, setSortedArr, setMove);
-    }, 0);
+    animateBubbleSort(array, moves, setSortedArr, setMove, setTimeoutId);
 
     setTimeout(() => {
       setSortedArr(sortedArray);
@@ -55,6 +54,7 @@ function App() {
     setButtonClicked(false);
     generateArray(10);
     setMove({});
+    clearTimeout(timeoutId);
   }
 
   return (

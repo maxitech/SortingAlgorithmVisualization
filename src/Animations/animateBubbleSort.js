@@ -1,6 +1,6 @@
-function animateBubbleSort(array, moves, setSortedArray, setBars) {
+function animateBubbleSort(array, moves, setSortedArray, setMove, setTimeoutId) {
   if (!moves || moves.length === 0) {
-    setBars();
+    setMove({});
     return;
   }
   const move = moves.shift();
@@ -10,12 +10,13 @@ function animateBubbleSort(array, moves, setSortedArray, setBars) {
     [array[i], array[j]] = [array[j], array[i]];
   }
 
-  setBars(move);
+  setMove(move);
   setSortedArray([...array]);
 
-  setTimeout(() => {
-    animateBubbleSort(array, moves, setSortedArray, setBars);
-  }, 500);
+  const id = setTimeout(() => {
+    animateBubbleSort(array, moves, setSortedArray, setMove, setTimeoutId);
+  }, 50);
+  setTimeoutId(id);
 }
 
 export default animateBubbleSort;
