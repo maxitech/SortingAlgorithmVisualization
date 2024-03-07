@@ -1,5 +1,4 @@
 function BarsContainer({ array, move }) {
-  console.log(move);
   const barHeight = array.map((bar) => bar * 100);
   const barEl = array.map((bar, i) => {
     let barColor = '#525ceb';

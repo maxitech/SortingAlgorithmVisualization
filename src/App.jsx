@@ -35,8 +35,6 @@ function App() {
     const { sortedArray, moves } = bubbleSort(copy);
     setSortedArr([...sortedArray]);
 
-    // console.log(moves);
-
     setTimeout(() => {
       animateBubbleSort(array, moves, setSortedArr, setMove);
     }, 0);
