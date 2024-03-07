@@ -5,7 +5,7 @@ import animateBubbleSort from './Animations/animateBubbleSort';
 import BarsContainer from './Components/BarsContainer';
 
 function App() {
-  const [arrayLength, setArrayLength] = useState(10);
+  const [arrayLength, setArrayLength] = useState(50);
   const [array, setArray] = useState([]);
   const [sortedArr, setSortedArr] = useState([]);
   const [buttonClicked, setButtonClicked] = useState(false);
@@ -36,7 +36,7 @@ function App() {
     const { sortedArray, moves } = bubbleSort(copy);
     setSortedArr([...sortedArray]);
 
-    animateBubbleSort(array, moves, setSortedArr, setMove, setTimeoutId);
+    animateBubbleSort(array, moves, setSortedArr, setMove, setTimeoutId, arrayLength);
 
     setTimeout(() => {
       setSortedArr(sortedArray);
@@ -48,11 +48,11 @@ function App() {
   }
 
   function reset() {
-    setArrayLength(10);
+    setArrayLength(50);
     setArray([]);
     setSortedArr([]);
     setButtonClicked(false);
-    generateArray(10);
+    generateArray(50);
     setMove({});
     clearTimeout(timeoutId);
   }
@@ -65,7 +65,7 @@ function App() {
         <input
           type="range"
           min="10"
-          max="200"
+          max="100"
           value={arrayLength}
           onChange={handleSliderChange}
           disabled={buttonClicked}
