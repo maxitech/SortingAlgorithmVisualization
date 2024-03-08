@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+*,
 *::before,
 *::after,
 body {
   box-sizing: border-box;
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
 }
 
@@ -12,71 +13,37 @@ body {
   background-color: #3d3b40;
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   color: #f8edff;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1em 2em;
 }
 
-#root {
-  display: grid;
-  justify-content: center;
+h1 {
+  margin-bottom: 1em;
 }
 
 .use_info_container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  margin-bottom: 1em;
 }
 
 .slider_container {
   display: flex;
   align-items: center;
   gap: 2em;
+  margin-right: 1em;
 }
 
 .slider_container > h2 {
   font-size: 1.25rem;
 }
 
-.bars_container {
-  height: 50vh;
-  width: 70vw;
-
-  border: 1.5px solid #f8edff;
-  padding: 0.5em 1em 0 1em;
-
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-.bar {
-  width: 10px;
-  background-color: #525ceb;
-  margin-right: 0.125em;
-}
-
-.btn_container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1em;
-  gap: 1em;
-}
-
-.btn {
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #525ceb;
-  padding: 1em 2em;
-
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
 .info_container {
   display: flex;
   align-items: center;
   gap: 2em;
+  margin-left: auto;
 }
 
 .info {
@@ -96,4 +63,62 @@ body {
 
 .yellow {
   background-color: #f0de36;
+}
+
+.bars_container {
+  height: 50vh;
+  border: 1px solid #fff;
+  padding: 1em 0 0 0;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  margin-bottom: 1em;
+}
+
+.bar {
+  width: 10px;
+  background-color: #525ceb;
+  margin: 0 1px;
+}
+
+.btn_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.btn {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #525ceb;
+  padding: 1em 2em;
+
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    margin-bottom: 1em;
+    font-size: 1.8rem;
+  }
+
+  .use_info_container {
+    flex-wrap: wrap;
+  }
+
+  .slider_container {
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin-bottom: 1.5em;
+  }
+
+  .info_container {
+    margin-left: 0;
+  }
 }
