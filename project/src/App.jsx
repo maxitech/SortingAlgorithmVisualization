@@ -42,10 +42,6 @@ function App() {
     setSortedArr([...sortedArray]);
 
     startAnimation(moves);
-
-    setTimeout(() => {
-      setSortedArr(sortedArray);
-    }, moves.length * 50);
   }
 
   function handleMergeSortClick() {
@@ -55,10 +51,6 @@ function App() {
     setSortedArr([...sortedArray]);
 
     startAnimation(moves);
-
-    setTimeout(() => {
-      setSortedArr(sortedArray);
-    }, moves.length * 50);
   }
 
   function handleResetClick() {
