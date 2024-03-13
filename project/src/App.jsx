@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import bubbleSort from './Algorithms/bubbleSort';
 import animateBubbleSort from './Animations/animateBubbleSort';
 import mergeSort from './Algorithms/mergeSort';
+import animateMergeSort from './Animations/animateMergeSort';
 import BarsContainer from './Components/BarsContainer';
 
 function App() {
@@ -38,6 +39,26 @@ function App() {
     setSortedArr([...sortedArray]);
 
     animateBubbleSort(
+      array,
+      moves,
+      setSortedArr,
+      setMove,
+      setTimeoutId,
+      arrayLength
+    );
+
+    setTimeout(() => {
+      setSortedArr(sortedArray);
+    }, moves.length * 50);
+  }
+
+  function handleMergeSortClick() {
+    setButtonClicked(true);
+    const copy = [...array];
+    const { sortedArray, moves } = mergeSort(copy);
+    setSortedArr([...sortedArray]);
+
+    animateMergeSort(
       array,
       moves,
       setSortedArr,
@@ -102,6 +123,14 @@ function App() {
           className='btn'
         >
           Bubble Sort
+        </button>
+
+        <button
+          onClick={handleMergeSortClick}
+          disabled={buttonClicked}
+          className='btn'
+        >
+          Merge Sort
         </button>
         <button onClick={handleResetClick} className='btn'>
           Reset

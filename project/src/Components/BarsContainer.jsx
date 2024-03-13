@@ -4,18 +4,25 @@ function BarsContainer({ array, move }) {
   const barEl = array.map((bar, i) => {
     let barColor = '#525ceb';
     if (move && !moveExist && move.indicies?.includes(i)) {
-      barColor = move.type === 'swap' ? '#DA1212' : '#F0DE36';
+      if (move.type === 'swap') {
+        barColor = '#DA1212';
+      } else if (move.type === 'comp') {
+        barColor = '#F0DE36';
+      } else if (move.type === 'merge') {
+        barColor = '#00FF00';
+      }
     }
+
     return (
       <div
         key={i}
-        className="bar"
+        className='bar'
         style={{ height: `${barHeight[i]}%`, backgroundColor: `${barColor}` }}
       ></div>
     );
   });
 
-  return <div className="bars_container">{barEl}</div>;
+  return <div className='bars_container'>{barEl}</div>;
 }
 
 export default BarsContainer;
