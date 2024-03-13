@@ -1,10 +1,9 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import bubbleSort from './Algorithms/bubbleSort';
-import animateBubbleSort from './Animations/animateBubbleSort';
 import mergeSort from './Algorithms/mergeSort';
-import animateMergeSort from './Animations/animateMergeSort';
 import BarsContainer from './Components/BarsContainer';
+import animateSort from './Animations/animation';
 
 function App() {
   const [arrayLength, setArrayLength] = useState(50);
@@ -32,20 +31,17 @@ function App() {
     setArrayLength(sliderValue);
   }
 
+  function startAnimation(moves) {
+    animateSort(array, moves, setSortedArr, setMove, setTimeoutId, arrayLength);
+  }
+
   function handleBubbleSortClick() {
     setButtonClicked(true);
     const copy = [...array];
     const { sortedArray, moves } = bubbleSort(copy);
     setSortedArr([...sortedArray]);
 
-    animateBubbleSort(
-      array,
-      moves,
-      setSortedArr,
-      setMove,
-      setTimeoutId,
-      arrayLength
-    );
+    startAnimation(moves);
 
     setTimeout(() => {
       setSortedArr(sortedArray);
@@ -58,14 +54,7 @@ function App() {
     const { sortedArray, moves } = mergeSort(copy);
     setSortedArr([...sortedArray]);
 
-    animateMergeSort(
-      array,
-      moves,
-      setSortedArr,
-      setMove,
-      setTimeoutId,
-      arrayLength
-    );
+    startAnimation(moves);
 
     setTimeout(() => {
       setSortedArr(sortedArray);

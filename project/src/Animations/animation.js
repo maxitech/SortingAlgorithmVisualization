@@ -1,4 +1,6 @@
-function animateMergeSort(
+import calculateDelay from '../Helpers/calculateDelay';
+
+function animateSort(
   array,
   moves,
   setSortedArray,
@@ -6,22 +8,6 @@ function animateMergeSort(
   setTimeoutId,
   arrayLength
 ) {
-  function calculateDelay(arrayLength) {
-    const maxArrayLength = 70;
-    const minArrayLength = 10;
-    const maxDelay = 500;
-    const minDelay = 0;
-
-    if (arrayLength <= minArrayLength) {
-      return maxDelay;
-    } else if (arrayLength >= maxArrayLength) {
-      return minDelay;
-    } else {
-      const slope = (minDelay - maxDelay) / (maxArrayLength - minArrayLength);
-      return slope * (arrayLength - minArrayLength) + maxDelay;
-    }
-  }
-
   if (!moves || moves.length === 0) {
     setMove({});
     return;
@@ -40,7 +26,7 @@ function animateMergeSort(
 
   const delay = calculateDelay(arrayLength);
   const id = setTimeout(() => {
-    animateMergeSort(
+    animateSort(
       array,
       moves,
       setSortedArray,
@@ -52,4 +38,4 @@ function animateMergeSort(
   setTimeoutId(id);
 }
 
-export default animateMergeSort;
+export default animateSort;
