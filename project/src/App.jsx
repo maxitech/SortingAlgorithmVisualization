@@ -35,22 +35,21 @@ function App() {
     animateSort(array, moves, setSortedArr, setMove, setTimeoutId, arrayLength);
   }
 
-  function handleBubbleSortClick() {
-    setButtonClicked(true);
+  function startSort(sortAlgorithm) {
     const copy = [...array];
-    const { sortedArray, moves } = bubbleSort(copy);
-    setSortedArr([...sortedArray]);
+    const { sortedArray, moves } = sortAlgorithm(copy);
 
+    setButtonClicked(true);
+    setSortedArr([...sortedArray]);
     startAnimation(moves);
   }
 
-  function handleMergeSortClick() {
-    setButtonClicked(true);
-    const copy = [...array];
-    const { sortedArray, moves } = mergeSort(copy);
-    setSortedArr([...sortedArray]);
+  function handleBubbleSortClick() {
+    startSort(bubbleSort);
+  }
 
-    startAnimation(moves);
+  function handleMergeSortClick() {
+    startSort(mergeSort);
   }
 
   function handleResetClick() {
