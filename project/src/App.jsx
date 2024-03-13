@@ -12,6 +12,7 @@ function App() {
   const [buttonClicked, setButtonClicked] = useState(false);
   const [move, setMove] = useState({});
   const [timeoutId, setTimeoutId] = useState(null);
+  const [selectedValue, setSelectedValue] = useState('bubble');
 
   function generateArray(length) {
     const newArray = [];
@@ -24,12 +25,6 @@ function App() {
   useEffect(() => {
     generateArray(arrayLength);
   }, []);
-
-  function handleSliderChange(e) {
-    const sliderValue = parseInt(e.target.value);
-    generateArray(sliderValue);
-    setArrayLength(sliderValue);
-  }
 
   function startAnimation(moves) {
     animateSort(array, moves, setSortedArr, setMove, setTimeoutId, arrayLength);
@@ -44,12 +39,19 @@ function App() {
     startAnimation(moves);
   }
 
-  function handleBubbleSortClick() {
-    startSort(bubbleSort);
+  function handleSortClick() {
+    if (selectedValue === 'bubble') startSort(bubbleSort);
+    if (selectedValue === 'merge') startSort(mergeSort);
   }
 
-  function handleMergeSortClick() {
-    startSort(mergeSort);
+  function handleSelectChange(e) {
+    setSelectedValue(e.target.value);
+  }
+
+  function handleSliderChange(e) {
+    const sliderValue = parseInt(e.target.value);
+    generateArray(sliderValue);
+    setArrayLength(sliderValue);
   }
 
   function handleResetClick() {
@@ -69,6 +71,21 @@ function App() {
   return (
     <>
       <h1>Sorting Algorithm Visualization</h1>
+      <div className='select_container'>
+        <label htmlFor='select_box' className='select_label'>
+          Choose Algorithm:
+        </label>
+        <select
+          id='select_box'
+          value={selectedValue}
+          onChange={handleSelectChange}
+          className='select_box'
+        >
+          <option value='bubble'>Bubble Sort</option>
+          <option value='merge'>Merge Sort</option>
+        </select>
+      </div>
+
       <div className='use_info_container'>
         <div className='slider_container'>
           <h2>Change Array Size & Speed:</h2>
@@ -91,6 +108,13 @@ function App() {
             <div className='info_color yellow'></div>
             <p>compare</p>
           </div>
+
+          {selectedValue === 'merge' && (
+            <div className='info'>
+              <div className='info_color green'></div>
+              <p>merge</p>
+            </div>
+          )}
         </div>
       </div>
 
@@ -98,20 +122,13 @@ function App() {
 
       <div className='btn_container'>
         <button
-          onClick={handleBubbleSortClick}
+          onClick={handleSortClick}
           disabled={buttonClicked}
           className='btn'
         >
-          Bubble Sort
+          Sort
         </button>
 
-        <button
-          onClick={handleMergeSortClick}
-          disabled={buttonClicked}
-          className='btn'
-        >
-          Merge Sort
-        </button>
         <button onClick={handleResetClick} className='btn'>
           Reset
         </button>

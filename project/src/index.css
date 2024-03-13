@@ -65,6 +65,10 @@ h1 {
   background-color: #f0de36;
 }
 
+.green {
+  background-color: #00ff00;
+}
+
 .bars_container {
   height: 50vh;
   border: 1px solid #fff;
@@ -100,6 +104,32 @@ h1 {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.select_container {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 2em;
+}
+
+.select_label {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.select_box {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  background-color: #3d3b40;
+  color: #f8edff;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+}
+
+.select_box > option {
+  font-weight: 500;
+  font-size: 1rem;
 }
 
 @media only screen and (max-width: 600px) {
