@@ -10,6 +10,8 @@ function BarsContainer({ array, move }) {
         barColor = '#F0DE36';
       } else if (move.type === 'merge') {
         barColor = '#00FF00';
+      } else if (move.type === 'pivot') {
+        barColor = '#00FFFF';
       }
     }
 

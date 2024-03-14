@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import bubbleSort from './Algorithms/bubbleSort';
 import mergeSort from './Algorithms/mergeSort';
+import quickSort from './Algorithms/quickSort';
 import BarsContainer from './Components/BarsContainer';
 import animateSort from './Animations/animation';
 
@@ -42,6 +43,7 @@ function App() {
   function handleSortClick() {
     if (selectedValue === 'bubble') startSort(bubbleSort);
     if (selectedValue === 'merge') startSort(mergeSort);
+    if (selectedValue === 'quick') startSort(quickSort);
   }
 
   function handleSelectChange(e) {
@@ -83,6 +85,7 @@ function App() {
         >
           <option value='bubble'>Bubble Sort</option>
           <option value='merge'>Merge Sort</option>
+          <option value='quick'>Quick Sort</option>
         </select>
       </div>
 
@@ -113,6 +116,13 @@ function App() {
             <div className='info'>
               <div className='info_color green'></div>
               <p>merge</p>
+            </div>
+          )}
+
+          {selectedValue === 'quick' && (
+            <div className='info'>
+              <div className='info_color cyan'></div>
+              <p>pivot</p>
             </div>
           )}
         </div>

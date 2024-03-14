@@ -69,6 +69,10 @@ h1 {
   background-color: #00ff00;
 }
 
+.cyan {
+  background-color: #00ffff;
+}
+
 .bars_container {
   height: 50vh;
   border: 1px solid #fff;

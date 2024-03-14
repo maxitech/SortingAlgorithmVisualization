@@ -15,7 +15,7 @@ function animateSort(
   const move = moves.shift();
   const [i, j] = move.indicies;
 
-  if (move.type === 'swap') {
+  if (move.type === 'swap' || move.type === 'pivot') {
     [array[i], array[j]] = [array[j], array[i]];
   } else if (move.type === 'merge') {
     array[i] = move.value;
