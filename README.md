@@ -18,7 +18,7 @@ This project is a sorting algorithm visualization tool built with React. It prov
 
 ## What I Learned
 - **Sorting Algorithms:** Deepened my understanding of sorting algorithms including Bubble Sort, Merge Sort, Quick Sort, and Insertion Sort. Explored their implementations, complexities, and optimizations.
-- **Big O Notation:** Gained insights into algorithm analysis, particularly focusing on Big O notation for evaluating algorithm efficiency and performance. However, I recognize that this is just scratching the surface of a vast field.
+- **Big O Notation:** Gained insights into algorithm analysis, particularly focusing on [Big O](https://en.wikipedia.org/wiki/Big_O_notation) notation for evaluating algorithm efficiency and performance. However, I recognize that this is just scratching the surface of a vast field.
 
 ## Sources and Inspiration
 - The idea for this project was inspired by similar sorting algorithm visualization [project](https://github.com/clementmihailescu/Sorting-Visualizer).
