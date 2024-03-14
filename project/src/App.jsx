@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import bubbleSort from './Algorithms/bubbleSort';
 import mergeSort from './Algorithms/mergeSort';
 import quickSort from './Algorithms/quickSort';
+import insertionSort from './Algorithms/insertionSort';
 import BarsContainer from './Components/BarsContainer';
 import animateSort from './Animations/animation';
 
@@ -44,6 +45,7 @@ function App() {
     if (selectedValue === 'bubble') startSort(bubbleSort);
     if (selectedValue === 'merge') startSort(mergeSort);
     if (selectedValue === 'quick') startSort(quickSort);
+    if (selectedValue === 'insertion') startSort(insertionSort);
   }
 
   function handleSelectChange(e) {
@@ -86,6 +88,7 @@ function App() {
           <option value='bubble'>Bubble Sort</option>
           <option value='merge'>Merge Sort</option>
           <option value='quick'>Quick Sort</option>
+          <option value='insertion'>Insertion Sort</option>
         </select>
       </div>
 
