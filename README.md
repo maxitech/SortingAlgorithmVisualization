@@ -24,7 +24,10 @@ This project is a sorting algorithm visualization tool built with React. It prov
 - The idea for this project was inspired by similar sorting algorithm visualization [project](https://github.com/clementmihailescu/Sorting-Visualizer).
 - My understanding of sorting algorithms was enhanced by watching various YouTube videos and reading articles on Wikipedia. Some useful resources include:
   - [Sorting Algorithms Explained Visually](https://youtu.be/RfXt_qHDEPw?si=8jCAgmIaRcfpTnSs)
+  - [Bubble Sort - Wikipedia](https://en.wikipedia.org/wiki/Bubblesort)
   - [Merge Sort - Wikipedia](https://en.wikipedia.org/wiki/Merge_sort)
+  - [Quick Sort - Wikipedia](https://en.wikipedia.org/wiki/Quicksort)
+  - [Insertion Sort - Wikipedia](https://en.wikipedia.org/wiki/Insertion_sort)
 
 ## :computer: Try it out!
   Explore the project [here](https://sortalgorithm.netlify.app/)
