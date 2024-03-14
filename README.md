@@ -20,6 +20,9 @@ This project is a sorting algorithm visualization tool built with React. It prov
 - **Sorting Algorithms:** Deepened my understanding of sorting algorithms including Bubble Sort, Merge Sort, Quick Sort, and Insertion Sort. Explored their implementations, complexities, and optimizations.
 - **Big O Notation:** Gained insights into algorithm analysis, particularly focusing on [Big O](https://en.wikipedia.org/wiki/Big_O_notation) notation for evaluating algorithm efficiency and performance. However, I recognize that this is just scratching the surface of a vast field.
 
+## :computer: Try it out!
+  Explore the project [here](https://sortalgorithm.netlify.app/)
+ 
 ## Sources and Inspiration
 - The idea for this project was inspired by similar sorting algorithm visualization [project](https://github.com/clementmihailescu/Sorting-Visualizer).
 - My understanding of sorting algorithms was enhanced by watching various YouTube videos and reading articles on Wikipedia. Some useful resources include:
@@ -28,9 +31,6 @@ This project is a sorting algorithm visualization tool built with React. It prov
   - [Merge Sort - Wikipedia](https://en.wikipedia.org/wiki/Merge_sort)
   - [Quick Sort - Wikipedia](https://en.wikipedia.org/wiki/Quicksort)
   - [Insertion Sort - Wikipedia](https://en.wikipedia.org/wiki/Insertion_sort)
-
-## :computer: Try it out!
-  Explore the project [here](https://sortalgorithm.netlify.app/)
 
 ## :vertical_traffic_light: Running the Project
 To run the project in your local environment, follow these steps: 
