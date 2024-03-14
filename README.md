@@ -1,5 +1,5 @@
 # Sorting Algorithm Visualization
-This project is a sorting algorithm visualization tool built with React. It provides a visual representation of sorting algorithms such as Bubble Sort, Merge Sort, Quick Sort, and Insertion Sort. Users can interact with the visualization, adjust the array size, and observe the sorting process step by step.
+This project is a sorting algorithm visualization tool built with React. It provides a visual representation of sorting algorithms such as Bubble Sort, Merge Sort, Quick Sort, and Insertion Sort. Users can interact with the visualization, adjust the array size, and observe the sorting process step by step. Click [here](https://sortalgorithm.netlify.app/) to visit the live project.
 
 ## Technologies Used
 - React
