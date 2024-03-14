@@ -2,7 +2,7 @@ function calculateDelay(arrayLength) {
   const maxArrayLength = 70;
   const minArrayLength = 10;
   const maxDelay = 250;
-  const minDelay = 10;
+  const minDelay = 5;
   const defaultDelay = 20;
 
   if (arrayLength <= minArrayLength) {
